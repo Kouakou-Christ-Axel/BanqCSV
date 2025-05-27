@@ -81,7 +81,7 @@ def preprocess_data(data: ClientData) -> ClientData:
         if col_data.type == 'str' and column != 'month':  # Ne pas traiter month deux fois
             unique_values = col_data.unique()
             # Petit nombre de modalités
-            if len(unique_values) < 10:
+            if len(unique_values) <= 5:
                 # paire valeur -> index
                 value_map = {val: idx for idx, val in enumerate(sorted(unique_values))}
                 cleaned_data[column] = [value_map[val] for val in cleaned_data[column]]

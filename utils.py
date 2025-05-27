@@ -1,5 +1,4 @@
 from client_data import ClientData
-from banq import load_csv_data, preprocess_data
 
 
 def filter_by_age(data: ClientData, min_age: int, max_age: int) -> ClientData:

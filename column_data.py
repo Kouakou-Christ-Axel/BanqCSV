@@ -89,11 +89,8 @@ class ColumnData:
         Retourne un dictionnaire avec les valeurs uniques et leur fréquence dans la colonne.
         """
         counts = {}
-        for value in self.data:
-            if value in counts:
-                counts[value] += 1
-            else:
-                counts[value] = 1
+        for value in self.unique(): # Obtenir les valeurs uniques
+            counts[value] = self.data.count(value) # Compter les occurrences de chaque valeur unique
         return counts
 
     def stats(self):
